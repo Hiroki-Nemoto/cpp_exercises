@@ -1,8 +1,6 @@
 #include <iostream>
 #include "stack.h"
 
-using namespace std;
-
 bool Stack::empty() {
     if(_top == -1) {
         return true;
@@ -19,9 +17,9 @@ int Stack::size() {
     return _top;
 }
 
-void Stack::push(string data) {
+void Stack::push(std::string data) {
     if(full()){
-        cout << "Error: Stack is full!" << endl;
+        std::cout << "Error: Stack is full!" << std::endl;
     } else {
         _data[++_top] = data;
     }
@@ -30,12 +28,12 @@ void Stack::push(string data) {
 
 void Stack::pop() {
     if(empty()){
-        cout<<"Error: Stack is empty!" << endl;
+        std::cout<<"Error: Stack is empty!" << std::endl;
     } else {
         _data[--_top];
     }
 }
 
-string Stack::top() {
+std::string Stack::top() {
     return _data[_top];
 }
