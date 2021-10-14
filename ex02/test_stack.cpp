@@ -1,26 +1,24 @@
 #include <iostream>
 #include "stack.h"
 
-using namespace std;
-
 int main(void) {
     Stack stack;
 
     stack.push("Good morning!");
     stack.push("Hello!");
 
-    cout <<  stack.top() << endl;
+    std::cout <<  stack.top() << std::endl;
 
     stack.pop();
 
-    cout <<  stack.top() << endl;
+    std::cout <<  stack.top() << std::endl;
 
     stack.pop();
     stack.pop();
 
     stack.push("Good evening!");
 
-    cout <<  stack.top() << endl;
+    std::cout <<  stack.top() << std::endl;
 
     return 0;
 }
