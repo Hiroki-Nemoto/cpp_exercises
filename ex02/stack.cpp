@@ -14,7 +14,7 @@ bool Stack::full() {
 }
 
 int Stack::size() {
-    return _top;
+    return _top + 1;
 }
 
 void Stack::push(std::string data) {
