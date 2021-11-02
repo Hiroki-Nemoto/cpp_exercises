@@ -28,7 +28,7 @@ private:
 
 public:
     // Constructors:
-    ArrayStack() : _num_items(0), _allocated_size(0), _items(nullptr) {}
+    ArrayStack() : _num_items(0),_items(nullptr),_allocated_size(0) {}
     /* COMPLETE ... init _num_items to 0, _allocated_size to 0, and
      * set _items to the null pointer, 
      */
