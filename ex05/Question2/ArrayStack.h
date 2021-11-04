@@ -28,7 +28,11 @@ private:
 
 public:
     // Constructors:
+        /* COMPLETE ... init _num_items to 0, _allocated_size to 0, and
+     * set _items to the null pointer, 
+     */
     ArrayStack() : _num_items(0),_items(nullptr),_allocated_size(0) {}
+    
     ArrayStack(const ArrayStack& a) {
         _num_items = a._num_items;
         _allocated_size = a._allocated_size;
@@ -36,9 +40,14 @@ public:
         _items = a._items;
         std::cout << "Copy Constructor" << std::endl;
     }
-    /* COMPLETE ... init _num_items to 0, _allocated_size to 0, and
-     * set _items to the null pointer, 
-     */
+    
+    ArrayStack& operator=(const ArrayStack& b){
+        _num_items = b._num_items;
+        _allocated_size = b._allocated_size;
+        _items = new double[b._num_items];
+        _items = b._items;
+        std::cout << "Assignment Operator" << std::endl;
+    }
 
     explicit ArrayStack(int allocated_size) {
         _num_items = 0;
