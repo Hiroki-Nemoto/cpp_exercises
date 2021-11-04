@@ -47,6 +47,7 @@ public:
         _items = new double[b._num_items];
         _items = b._items;
         std::cout << "Assignment Operator" << std::endl;
+        return *this;
     }
 
     explicit ArrayStack(int allocated_size) {
