@@ -11,22 +11,22 @@ void Date::print(){
     std::cout << "year: " << year << " month: " << month << " day: " << day << std::endl;
 }
 
-const int Date::get_month() {
+int Date::get_month() const {
     return month;
 }
 
-const int Date::get_year() {
+int Date::get_year() const {
     return year;
 }
 
-const int Date::get_day() {
+int Date::get_day() const {
     return day;
 }
 
 void Date::inc_day() {
-    if(this->get_month() == 1,3,5,7,8,10,12 && this -> get_day() == 31){
+    if(((this->get_month() == 1) || (this->get_month() == 3) || (this->get_month() == 5) || (this->get_month() == 7) || (this->get_month() == 8) || (this->get_month() == 10) || (this->get_month() == 12)) && this -> get_day() == 31){
         this->day = 1;
-    } else if(this->get_month() == 4,6,9,11 && this->get_day() == 30){
+    } else if(((this->get_month() == 4) || (this->get_month() == 6) || (this->get_month() == 9) || (this->get_month() == 11)) && this->get_day() == 30){
         this->day = 1;
     } else if(this->get_month() == 2 && (this->get_year() % 400 == 0 || (this->get_year() % 4 == 0 && this->get_year() % 100 != 0)) && this->get_day() == 29 ){
         this->day = 1;
