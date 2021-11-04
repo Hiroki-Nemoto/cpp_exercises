@@ -29,13 +29,6 @@ private:
 public:
     // Constructors:
     ArrayStack() : _num_items(0),_items(nullptr),_allocated_size(0) {}
-    ArrayStack(const ArrayStack& a) {
-        _num_items = a._num_items;
-        _allocated_size = a._allocated_size;
-        _items = new double[a._num_items];
-        _items = a._items;
-        std::cout << "Copy Constructor" << std::endl;
-    }
     /* COMPLETE ... init _num_items to 0, _allocated_size to 0, and
      * set _items to the null pointer, 
      */
