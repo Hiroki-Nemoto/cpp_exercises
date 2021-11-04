@@ -2,9 +2,7 @@
 #include "ArrayStack.h"
 
 int main(void) {
-    // ...
-    // insert the code from question 1
-    // ...
+    
     ArrayStack stack1;
 
     stack1.push(1.0);
