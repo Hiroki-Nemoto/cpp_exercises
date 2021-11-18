@@ -1,7 +1,5 @@
-//intStr.h
-#pragma once
-
-struct intStr {
-    char* intToStr(int);
-    int strToInt(char*);
-};
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+char *intToStr(int);
+int strToInt(char *);
