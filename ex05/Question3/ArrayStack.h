@@ -36,33 +36,45 @@ public:
     ArrayStack(const ArrayStack& a) {
         _num_items = a._num_items;
         _allocated_size = a._allocated_size;
-        _items = new double[a._allocated_size];
-        _items = a._items;
+        double* tmp = new double[a._allocated_size];
+        for(int i = 0; i < a._num_items; i++){
+            tmp[i] = a._items[i];
+        }
+        _items = tmp;
         std::cout << "Copy Constructor" << std::endl;
     }
 
     ArrayStack& operator=(const ArrayStack& b){
         _num_items = b._num_items;
         _allocated_size = b._allocated_size;
-        _items = new double[b._allocated_size];
-        _items = b._items;
+        double* tmp = new double[b._allocated_size];
+        for(int i = 0; i < b._num_items; i++){
+            tmp[i] = b._items[i];
+        }
+        _items = tmp;
         std::cout << "Assignment Operator" << std::endl;
         return *this;
     }
 
-    ArrayStack(const ArrayStack&& s) {
+    ArrayStack(ArrayStack&& s) {
         _num_items = s._num_items;
         _allocated_size = s._allocated_size;
-        _items = new double[s._num_items];
         _items = s._items;
+        s._num_items = 0;
+        s._allocated_size = 0;
+        s._items = 0;
+        s._items = nullptr;
         std::cout << "Move Constructor" << std::endl;
     }
 
-    ArrayStack& operator=(const ArrayStack&& t){
+    ArrayStack& operator=( ArrayStack&& t){
         _num_items = t._num_items;
         _allocated_size = t._allocated_size;
-        _items = new double[t._num_items];
         _items = t._items;
+        t._num_items = 0;
+        t._allocated_size = 0;
+        t._items = 0;
+        t._items = nullptr;
         std::cout << "Move Assignment" << std::endl;
         return *this;
     }
