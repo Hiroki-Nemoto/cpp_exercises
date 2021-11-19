@@ -51,6 +51,7 @@ public:
         for(int i = 0; i < b._num_items; i++){
             tmp[i] = b._items[i];
         }
+        
         _items = tmp;
         std::cout << "Assignment Operator" << std::endl;
         return *this;
