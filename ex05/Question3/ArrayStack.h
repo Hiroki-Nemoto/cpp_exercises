@@ -51,6 +51,7 @@ public:
         for(int i = 0; i < b._num_items; i++){
             tmp[i] = b._items[i];
         }
+        delete[] _items;
         _items = tmp;
         std::cout << "Assignment Operator" << std::endl;
         return *this;
@@ -70,6 +71,7 @@ public:
     ArrayStack& operator=( ArrayStack&& t){
         _num_items = t._num_items;
         _allocated_size = t._allocated_size;
+        delete[] _items;
         _items = t._items;
         t._num_items = 0;
         t._allocated_size = 0;
