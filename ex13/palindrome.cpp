@@ -13,6 +13,13 @@ bool isPalindrome(string data) {
     d.erase(remove(d.begin(), d.end(), ' '), d.end());
     d.erase(remove(d.begin(), d.end(), ','), d.end());
     d.erase(remove(d.begin(), d.end(), '\''), d.end());
+    d.erase(remove(d.begin(), d.end(), '?'), d.end());
+    d.erase(remove(d.begin(), d.end(), '.'), d.end());
+    d.erase(remove(d.begin(), d.end(), '!'), d.end());
+    d.erase(remove(d.begin(), d.end(), '\"'), d.end());
+    d.erase(remove(d.begin(), d.end(), ';'), d.end());
+    d.erase(remove(d.begin(), d.end(), ':'), d.end());
+    d.erase(remove(d.begin(), d.end(), '-'), d.end());
 
     if (equal(d.begin(), d.begin() + d.size() / 2, d.rbegin())) {
         cout << data << ": palindrome" << endl;
