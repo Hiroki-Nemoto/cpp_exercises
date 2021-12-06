@@ -7,8 +7,8 @@ using namespace std;
 namespace PL4{
     template <class FwdIt>
     void sort(FwdIt begin, FwdIt end) {
-        for(auto i=begin; i!=end; ++i){
-            for(auto j=begin; j<i; ++j){
+        for(FwdIt i=begin; i!=end; ++i){
+            for(FwdIt j=begin; j<i; ++j){
                 if(*i < *j){
                     iter_swap(i, j);
                 }
