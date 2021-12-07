@@ -1,25 +1,19 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <cctype>
 
 using namespace std;
 
 bool isPalindrome(string data) {
     string d = data;
 
-    transform(d.begin(), d.end(), d.begin(),
-        [](unsigned char c) { return tolower(c); });
+    transform(d.begin(), d.end(), d.begin(), ::tolower);
+    auto fn_cond = [](char c){
+        return !isalpha(c);
+    };
 
-    d.erase(remove(d.begin(), d.end(), ' '), d.end());
-    d.erase(remove(d.begin(), d.end(), ','), d.end());
-    d.erase(remove(d.begin(), d.end(), '\''), d.end());
-    d.erase(remove(d.begin(), d.end(), '?'), d.end());
-    d.erase(remove(d.begin(), d.end(), '.'), d.end());
-    d.erase(remove(d.begin(), d.end(), '!'), d.end());
-    d.erase(remove(d.begin(), d.end(), '\"'), d.end());
-    d.erase(remove(d.begin(), d.end(), ';'), d.end());
-    d.erase(remove(d.begin(), d.end(), ':'), d.end());
-    d.erase(remove(d.begin(), d.end(), '-'), d.end());
+    d.erase(remove_if(d.begin(), d.end(), fn_cond), d.end());
 
     if (equal(d.begin(), d.begin() + d.size() / 2, d.rbegin())) {
         cout << data << ": palindrome" << endl;
